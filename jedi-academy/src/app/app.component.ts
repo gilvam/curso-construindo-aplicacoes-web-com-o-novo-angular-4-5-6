@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from './student/student';
 
 @Component({
   selector: 'jad-root',
@@ -7,8 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jedi-academy';
-
-  luke = { name: 'Luke', isJedi: true, temple: 'Cruscant' };
-  leia = { name: 'Han Solo', isJedi: false };
-  han = { name: 'Leia', isJedi: false };
+  students = [
+    { name: 'Luke', isJedi: true, temple: 'Cruscant' },
+    { name: 'Han Solo', isJedi: false },
+    { name: 'Leia', isJedi: false },
+  ];
 }
