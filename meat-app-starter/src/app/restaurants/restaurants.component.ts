@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from '../_shared/model/restaurant.model';
 import { RestaurantService } from '../_shared/service/restaurant.service';
+import { subscribeOn } from 'rxjs/operator/subscribeOn';
 
 @Component({
   selector: 'mt-restaurants',
@@ -14,7 +15,8 @@ export class RestaurantsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.restaurants = this.restaurantService.getRestaurants();
+    this.restaurantService.getRestaurants()
+      .subscribe(restaurants => this.restaurants = restaurants);
   }
 
 }
