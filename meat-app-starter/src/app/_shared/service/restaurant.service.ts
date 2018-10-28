@@ -33,8 +33,6 @@ export class RestaurantService {
   }
 
   getMenuOfRestaurant(id: string): Observable<MenuItem[]> {
-    console.log('id: ', id);
-    console.log('getMenuOfRestaurant: ', `${MEAT_API}/restaurants/${id}/menu`);
     return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
       .map(response => response.json())
       .catch(ErrorHandler.handleError);

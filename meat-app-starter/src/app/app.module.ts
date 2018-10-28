@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -17,8 +16,7 @@ import { MenuComponent } from './restaurants/restaurant/restaurant-detail/menu/m
 import { ShoppingCartComponent } from './restaurants/restaurant/restaurant-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/reviews/reviews.component';
-
-
+import { ShoppingCartService } from './_shared/service/shopping-cart.service';
 
 
 @NgModule({
@@ -41,7 +39,8 @@ import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/rev
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    RestaurantService
+    RestaurantService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
